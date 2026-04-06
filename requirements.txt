@@ -1,0 +1,13 @@
+# DeepFace installs cleanly — no dlib, no cmake, no compilation
+# Builds fine on Render free tier (512MB)
+deepface
+flask
+flask-cors
+gunicorn
+requests
+Pillow
+numpy
+tf-keras
+web3
+py-solc-x
+eth-tester

@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "C:\Users\dell\Downloads\Smart_Security_IoT-main\Smart_Security_IoT-main\backend\test.py", line 5, in <module>
+    setup_blockchain()
+  File "C:\Users\dell\Downloads\Smart_Security_IoT-main\Smart_Security_IoT-main\backend\blockchain_utils.py", line 56, in setup_blockchain
+    tx_hash = AlertStorage.constructor().transact({'from': owner_account})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\eth_utils\decorators.py", line 28, in _wrapper
+    return self.method(obj, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\contract\contract.py", line 635, in transact
+    return self.w3.eth.send_transaction(self._get_transaction(transaction))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\eth\eth.py", line 387, in send_transaction
+    return self._send_transaction(transaction)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\manager.py", line 232, in request_blocking
+    response = self._make_request(method, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\manager.py", line 163, in _make_request
+    return request_func(method, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\middleware\base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\middleware\base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\middleware\base.py", line 56, in middleware
+    return self.response_processor(method, make_request(method, params))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 1 more time]
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\middleware\base.py", line 55, in middleware
+    method, params = self.request_processor(method, params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\middleware\buffered_gas_estimate.py", line 43, in request_processor
+    hex(get_buffered_gas_estimate(cast("Web3", self._w3), transaction)),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\_utils\transactions.py", line 162, in get_buffered_gas_estimate
+    gas_estimate = w3.eth.estimate_gas(gas_estimate_transaction)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\eth\eth.py", line 317, in estimate_gas
+    return self._estimate_gas(transaction, block_identifier, state_override)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\manager.py", line 233, in request_blocking
+    return self.formatted_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\manager.py", line 199, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python312\Lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.MethodUnavailable: {'code': -32601, 'message': 'RPC Endpoint has not been implemented: eth_estimateGas'}
